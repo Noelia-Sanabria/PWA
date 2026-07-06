@@ -1,0 +1,21 @@
+{
+  "name": "Bloc de Notas Personal",
+  "short_name": "Mis Notas",
+  "description": "Una aplicación para tomar notas personales",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#007bff",
+  "icons": [
+    {
+      "src": "images/192icono.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/512icono.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
