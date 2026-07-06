@@ -1,6 +1,7 @@
 import { mostrarNotas } from "./ui.js";
 import { guardarNota, borrarNota, notas, reemplazarNotas } from "./notas.js";
 import { cargarDelStorage } from "./storage.js";
+import { actualizarEstadoConexion } from "./bom.js";
 
 cargarDelStorage();
 mostrarNotas();
@@ -20,16 +21,3 @@ inputNota.addEventListener("keydown", function(evento) {
   }
 });
 
-function actualizarEstadoConexion() {
-  if (navigator.onLine) {
-    console.log("Conectado a internet");
-  } else {
-    console.log("Sin conexión a internet");
-  }
-}
-
-window.addEventListener("online", actualizarEstadoConexion);
-window.addEventListener("offline", actualizarEstadoConexion);
-
-// Chequeo inicial al cargar la app
-actualizarEstadoConexion();
