@@ -2,6 +2,7 @@ import { guardarEnStorage, cargarDelStorage } from "./storage.js";
 import { mostrarNotas } from "./ui.js";
 
 export let notas = [];
+export let formatoNotas = "normal";
 
 export function reemplazarNotas(nuevasNotas) {
   notas.length = 0;
@@ -22,4 +23,20 @@ export function borrarNota(indice) {
     guardarEnStorage();
     mostrarNotas();
   }
+}
+
+export function obtenerNotasNumeradas() {
+  return notas.map((nota, indice) => `${indice + 1}. ${nota}`);
+}
+
+export function aplicarMayusculas() {
+  formatoNotas = "mayusculas";
+  guardarEnStorage();
+  mostrarNotas();
+}
+
+export function aplicarMinusculas() {
+  formatoNotas = "minusculas";
+  guardarEnStorage();
+  mostrarNotas();
 }

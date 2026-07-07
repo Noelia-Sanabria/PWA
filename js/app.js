@@ -1,5 +1,5 @@
 import { mostrarNotas } from "./ui.js";
-import { guardarNota, borrarNota, notas, reemplazarNotas } from "./notas.js";
+import { guardarNota, borrarNota, notas, reemplazarNotas, obtenerNotasNumeradas, aplicarMayusculas, aplicarMinusculas } from "./notas.js";
 import { cargarDelStorage } from "./storage.js";
 import { actualizarEstadoConexion, actualizarEstadoBateria, obtenerGeolocalización } from "./bom.js";
 
@@ -21,3 +21,8 @@ inputNota.addEventListener("keydown", function(evento) {
   }
 });
 
+let mayusculasButton = document.getElementById("mayusculasButton");
+let minusculasButton = document.getElementById("minusculasButton");
+
+mayusculasButton.addEventListener("click", aplicarMayusculas);
+minusculasButton.addEventListener("click", aplicarMinusculas);
