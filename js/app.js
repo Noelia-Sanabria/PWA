@@ -1,7 +1,7 @@
 import { mostrarNotas } from "./ui.js";
 import { guardarNota, borrarNota, notas, reemplazarNotas } from "./notas.js";
 import { cargarDelStorage } from "./storage.js";
-import { actualizarEstadoConexion } from "./bom.js";
+import { actualizarEstadoConexion, actualizarEstadoBateria, obtenerGeolocalización } from "./bom.js";
 
 cargarDelStorage();
 mostrarNotas();
