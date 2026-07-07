@@ -1,5 +1,5 @@
 import { mostrarNotas } from "./ui.js";
-import { guardarNota, borrarNota, notas, reemplazarNotas, obtenerNotasNumeradas, aplicarMayusculas, aplicarMinusculas } from "./notas.js";
+import { guardarNota, borrarNota, notas, reemplazarNotas, obtenerNotasNumeradas, aplicarMayusculas, aplicarMinusculas, buscarNotas } from "./notas.js";
 import { cargarDelStorage } from "./storage.js";
 import { actualizarEstadoConexion, actualizarEstadoBateria, obtenerGeolocalización } from "./bom.js";
 
@@ -26,3 +26,16 @@ let minusculasButton = document.getElementById("minusculasButton");
 
 mayusculasButton.addEventListener("click", aplicarMayusculas);
 minusculasButton.addEventListener("click", aplicarMinusculas);
+
+let inputBuscador = document.getElementById("inputBuscador");
+let buscarButton = document.getElementById("buscarButton");
+
+buscarButton.addEventListener("click", function() {
+  buscarNotas(inputBuscador.value);
+});
+
+inputBuscador.addEventListener("keydown", function(evento) {
+  if (evento.key === "Enter") {
+    buscarNotas(inputBuscador.value);
+  }
+});

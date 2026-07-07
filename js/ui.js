@@ -1,12 +1,14 @@
-import { notas, borrarNota, obtenerNotasNumeradas, formatoNotas } from "./notas.js";
-
+import { notas, borrarNota, obtenerNotasNumeradas, formatoNotas, notasFiltradas } from "./notas.js";
 
 export function mostrarNotas() {
   let listaNotas = document.getElementById("listaNotas");
   listaNotas.innerHTML = "";
 
+  // Usar notasFiltradas si existe, sino usar todas las notas
+  let notasAMostrar = notasFiltradas || notas;
+
   // Obtener notas numeradas
-  let notasNumeradas = obtenerNotasNumeradas();
+  let notasNumeradas = notasAMostrar.map((nota, indice) => `${indice + 1}. ${nota}`);
 
   // Aplicar formato (mayúsculas/minúsculas)
   let notasTransformadas = notasNumeradas.map((nota) => {

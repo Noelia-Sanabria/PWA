@@ -3,6 +3,7 @@ import { mostrarNotas } from "./ui.js";
 
 export let notas = [];
 export let formatoNotas = "normal";
+export let notasFiltradas = null;
 
 export function reemplazarNotas(nuevasNotas) {
   notas.length = 0;
@@ -38,5 +39,25 @@ export function aplicarMayusculas() {
 export function aplicarMinusculas() {
   formatoNotas = "minusculas";
   guardarEnStorage();
+  mostrarNotas();
+}
+
+export function buscarNotas(palabraClave) {
+  if (palabraClave === "") {
+    notasFiltradas = null; // Resetea el filtro
+    mostrarNotas();
+    return;
+  }
+
+  notasFiltradas = notas.filter(nota => 
+    nota.toLowerCase().includes(palabraClave.toLowerCase())
+  );
+
+  if (notasFiltradas.length === 0) {
+    let listaNotas = document.getElementById("listaNotas");
+    listaNotas.innerHTML = "<li>No se encontraron notas</li>";
+    return;
+  }
+
   mostrarNotas();
 }
