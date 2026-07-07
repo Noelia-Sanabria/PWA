@@ -9,12 +9,12 @@ mostrarNotas();
 let inputNota = document.getElementById("inputNota");
 let botonEnviar = document.getElementById("submitButton");
 
-botonEnviar.addEventListener("click", function() {
+botonEnviar.addEventListener("click", function () {
   guardarNota(inputNota.value);
   inputNota.value = "";
 });
 
-inputNota.addEventListener("keydown", function(evento) {
+inputNota.addEventListener("keydown", function (evento) {
   if (evento.key === "Enter") {
     guardarNota(inputNota.value);
     inputNota.value = "";
@@ -30,11 +30,11 @@ minusculasButton.addEventListener("click", aplicarMinusculas);
 let inputBuscador = document.getElementById("inputBuscador");
 let buscarButton = document.getElementById("buscarButton");
 
-buscarButton.addEventListener("click", function() {
+buscarButton.addEventListener("click", function () {
   buscarNotas(inputBuscador.value);
 });
 
-inputBuscador.addEventListener("keydown", function(evento) {
+inputBuscador.addEventListener("keydown", function (evento) {
   if (evento.key === "Enter") {
     buscarNotas(inputBuscador.value);
   }

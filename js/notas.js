@@ -61,3 +61,7 @@ export function buscarNotas(palabraClave) {
 
   mostrarNotas();
 }
+
+export function contarNotas() {
+  return notas.reduce((count) => count + 1, 0);
+}

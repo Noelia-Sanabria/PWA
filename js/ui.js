@@ -7,6 +7,10 @@ export function mostrarNotas() {
   // Usar notasFiltradas si existe, sino usar todas las notas
   let notasAMostrar = notasFiltradas || notas;
 
+  // Actualizar el contador
+  let contadorNotas = document.getElementById("contadorNotas");
+  contadorNotas.textContent = `Total de notas: ${notasAMostrar.length}`;
+
   // Obtener notas numeradas
   let notasNumeradas = notasAMostrar.map((nota, indice) => `${indice + 1}. ${nota}`);
 
