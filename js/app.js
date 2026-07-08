@@ -2,7 +2,9 @@ import { mostrarNotas } from "./ui.js";
 import { guardarNota, borrarNota, notas, reemplazarNotas, obtenerNotasNumeradas, aplicarMayusculas, aplicarMinusculas, buscarNotas } from "./notas.js";
 import { cargarDelStorage } from "./storage.js";
 import { actualizarEstadoConexion, actualizarEstadoBateria, obtenerGeolocalización } from "./bom.js";
+import { traerNotasDelServer } from "./api.js";
 
+traerNotasDelServer();
 cargarDelStorage();
 mostrarNotas();
 
